@@ -11,9 +11,11 @@ public class Main {
         while (true) {
             game.nextGen();
             game.showGen();
-            String whatToDo = scanner.next();
-            if (whatToDo.equals("0"))
-                break;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

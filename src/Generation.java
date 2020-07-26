@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Generation {
     public HashMap<Position, Cell> aliveCells = new HashMap<>();
-    public HashMap<Position, Integer> numberOfNeighbours = new HashMap<>();
+
     public int length = 10;
     public int width = 10;
 
@@ -30,17 +30,20 @@ public class Generation {
     }
 
     public void nextGen() {
+        HashMap<Position, Integer> numberOfNeighbours = new HashMap<>();
+
         Set<Position> setOfAlivePos = aliveCells.keySet();
         Iterator<Position> listOfAlivePosIterator = setOfAlivePos.iterator();
 
         while (listOfAlivePosIterator.hasNext()) {
             Position positionForGettingXY = listOfAlivePosIterator.next();
+
             int x = positionForGettingXY.getX();
             int y = positionForGettingXY.getY();
 
             for (int i = x-1; i <= x+1; i++) {
                 for (int j = y-1; j <= y+1; j++) {
-                    Position pos = new Position(i, j);
+                    Position pos = new Position(i%length, j%width);
 
                     if (pos.getX() == x && pos.getY() == y)
                         ;
@@ -58,12 +61,8 @@ public class Generation {
         Iterator<Position> setOfNumberOfNeighboursIterator = setOfNumberOfNeighbours.iterator();
 
         while (setOfNumberOfNeighboursIterator.hasNext()) {
-            Position positionForGettingXY = setOfNumberOfNeighboursIterator.next();
+            Position pos = setOfNumberOfNeighboursIterator.next();
 
-            int x = positionForGettingXY.getX();
-            int y = positionForGettingXY.getY();
-
-            Position pos = new Position(x, y);
             int neighbours = numberOfNeighbours.get(pos);
 
             if (neighbours < 2 || neighbours > 3) {
