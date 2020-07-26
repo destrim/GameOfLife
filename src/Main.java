@@ -11,8 +11,8 @@ public class Main {
         while (true) {
             game.nextGen();
             game.showGen();
-            int whatToDo = scanner.nextInt();
-            if (whatToDo == 0)
+            String whatToDo = scanner.next();
+            if (whatToDo.equals("0"))
                 break;
         }
     }
