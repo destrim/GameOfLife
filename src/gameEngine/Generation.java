@@ -1,32 +1,23 @@
-import java.lang.reflect.Array;
+package gameEngine;
+
+import representation.Cell;
+import representation.Position;
+import utils.ParseJSON;
+
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Scanner;
 import java.util.Set;
 
 public class Generation {
     public HashMap<Position, Cell> aliveCells = new HashMap<>();
+    public HashMap<Position, Cell> initAliveCells = new HashMap<>();
 
     public int length = 10;
     public int width = 10;
 
-    public void newGen() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Number of alive cells: ");
-        int numberOfalive = scanner.nextInt();
-
-        for (int i = 0; i < numberOfalive; i++) {
-            System.out.print("Pos x: ");
-            int posx = scanner.nextInt();
-
-            System.out.print("Pos y: ");
-            int posy = scanner.nextInt();
-
-            Position pos = new Position(posx, posy);
-            Cell cell = new Cell(true, pos);
-            aliveCells.put(pos, cell);
-        }
+    public void newGen(String jsonString, String patternName) {
+        ParseJSON.parseJSONFromString(jsonString, patternName, aliveCells);
+        initAliveCells = (HashMap<Position, Cell>) aliveCells.clone();
     }
 
     public void nextGen() {
@@ -76,6 +67,10 @@ public class Generation {
         }
     }
 
+    public void resetGen() {
+        aliveCells = (HashMap<Position, Cell>) initAliveCells.clone();
+    }
+
     public void showGen() {
         System.out.println("");
         for (int i = 0; i < length; i++) {
@@ -85,7 +80,7 @@ public class Generation {
                 if (aliveCells.containsKey(pos))
                     System.out.print("X");
                 else
-                    System.out.print("O");
+                    System.out.print("o");
 
                 System.out.print(" ");
             }
