@@ -1,4 +1,4 @@
-package gameEngine;
+package com.destrim.gameEngine;
 
 public class GameCycle {
     public static void cycle(Generation pattern) {

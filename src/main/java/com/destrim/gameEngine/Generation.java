@@ -1,8 +1,8 @@
-package gameEngine;
+package com.destrim.gameEngine;
 
-import representation.Cell;
-import representation.Position;
-import utils.ParseJSON;
+import com.destrim.representation.Cell;
+import com.destrim.representation.Position;
+import com.destrim.utils.ParseJSON;
 
 import java.util.HashMap;
 import java.util.Iterator;

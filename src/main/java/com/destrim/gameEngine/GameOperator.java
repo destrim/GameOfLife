@@ -1,6 +1,6 @@
-package gameEngine;
+package com.destrim.gameEngine;
 
-import utils.FileHandling;
+import com.destrim.utils.FileHandling;
 
 public class GameOperator {
     public static void game(String fileName) {

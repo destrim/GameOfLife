@@ -1,4 +1,4 @@
-package utils;
+package com.destrim.utils;
 
 import java.io.IOException;
 import java.nio.file.Files;

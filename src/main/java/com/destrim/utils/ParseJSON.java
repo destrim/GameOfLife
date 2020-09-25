@@ -1,10 +1,9 @@
-package utils;
+package com.destrim.utils;
 
-import lombok.Setter;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import representation.Cell;
-import representation.Position;
+import com.destrim.representation.Cell;
+import com.destrim.representation.Position;
 
 import java.util.HashMap;
 

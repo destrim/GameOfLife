@@ -1,4 +1,4 @@
-package representation;
+package com.destrim.representation;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
