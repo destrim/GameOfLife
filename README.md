@@ -14,5 +14,5 @@ Conway's Game of Life implementation in Java made as self-learning project.
 App takes 4 patterns from json file and shows next 50 generations for each of them in a loop.
 
 <p align="center">
-<img src="demoGameOfLife.gif"/>
+<img src="GameOfLifeDemo.gif"/>
 </p>
