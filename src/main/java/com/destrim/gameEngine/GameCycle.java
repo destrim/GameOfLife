@@ -7,7 +7,7 @@ import java.io.IOException;
 public class GameCycle {
     public static void cycle(Generation pattern) {
         pattern.showGen();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 20; i++) {
             pattern.nextGen();
             pattern.showGen();
             try {

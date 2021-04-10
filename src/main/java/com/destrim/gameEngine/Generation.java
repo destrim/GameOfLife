@@ -12,8 +12,8 @@ public class Generation {
     public HashMap<Position, Cell> aliveCells = new HashMap<>();
     public HashMap<Position, Cell> initAliveCells = new HashMap<>();
 
-    public int length = 10;
-    public int width = 10;
+    public int length = 20;
+    public int width = 20;
 
     public void newGen(String jsonString, String patternName) {
         ParseJSON.parseJSONFromString(jsonString, patternName, aliveCells);
