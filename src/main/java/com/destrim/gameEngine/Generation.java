@@ -32,9 +32,9 @@ public class Generation {
             int x = positionForGettingXY.getX();
             int y = positionForGettingXY.getY();
 
-            for (int i = x-1; i <= x+1; i++) {
-                for (int j = y-1; j <= y+1; j++) {
-                    Position pos = new Position(i%length, j%width);
+            for (int i = x - 1; i <= x + 1; i++) {
+                for (int j = y - 1; j <= y + 1; j++) {
+                    Position pos = new Position(i % length, j % width);
 
                     if (pos.getX() == x && pos.getY() == y)
                         ;
@@ -80,7 +80,7 @@ public class Generation {
                 if (aliveCells.containsKey(pos))
                     System.out.print("X");
                 else
-                    System.out.print("o");
+                    System.out.print(" ");
 
                 System.out.print(" ");
             }
